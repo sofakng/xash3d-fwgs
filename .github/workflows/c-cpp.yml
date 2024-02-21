@@ -22,8 +22,8 @@ jobs:
       uses: BrettDong/setup-sdl2-frameworks@main
       with:
         sdl2: latest
-    #- name: Build engine
-    #  run: bash scripts/gha/build_macos.sh
+    - name: Build engine
+      run: bash scripts/gha/build_macos.sh
 #    - name: configure
 #      run: ./configure
 #    - name: make
