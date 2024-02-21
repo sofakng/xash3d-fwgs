@@ -19,9 +19,9 @@ jobs:
     - name: Setup SDL2 frameworks
       uses: BrettDong/setup-sdl2-frameworks@main
       with:
-        sdl2: "{{ env.SDL_VERSION }}"
-    - name: Build engine
-      run: bash scripts/gha/build_macos.sh
+        sdl2: ${{ env.SDL_VERSION }}
+    # - name: Build engine
+    #  run: bash scripts/gha/build_macos.sh
     - name: configure
       run: python3 ./waf configure
 #    - name: make
