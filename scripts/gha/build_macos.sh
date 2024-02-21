@@ -21,7 +21,7 @@ build_sdl2()
                 --enable-video-x11-xshape
                 --enable-x11-shared
                 --with-x
-                # --prefix / || die # get rid of /usr/local stuff
+                --prefix / || die # get rid of /usr/local stuff
         make -j2 || die
         mkdir -p "$BUILDDIR"/SDL2_linux
         make install DESTDIR="$BUILDDIR"/SDL2_linux || die
@@ -33,7 +33,7 @@ build_engine()
 {
         # Build engine
         cd "$BUILDDIR" || die
-				# /usr/bin/python3 ./waf configure -T release
+	/usr/bin/python3 ./waf configure -T release
 }
 
 mkdir -p artifacts/
@@ -44,6 +44,6 @@ rm -rf build # clean-up build directory
 # mv $DSTARGZ artifacts/
         
 build_sdl2
-# build_engine full # don't rebuild some common parts twice
+build_engine full # don't rebuild some common parts twice
 # build_appimage
 # mv $APPIMAGE artifacts/
