@@ -34,6 +34,7 @@ build_engine()
         # Build engine
         cd "$BUILDDIR" || die
 	/usr/bin/python3 ./waf configure -T release --skip-sdl2-sanity-check
+        /usr/bin/python3 ./waf build || die
 }
 
 mkdir -p artifacts/
