@@ -20,11 +20,11 @@ build_sdl2()
                 --enable-video-x11-xrandr \
                 --enable-video-x11-xshape \
                 --enable-x11-shared \
-                --with-x \
-                --prefix / || die # get rid of /usr/local stuff
+                --with-x 3 \
+                # --prefix / || die # get rid of /usr/local stuff
         make -j2 || die
         mkdir -p "$BUILDDIR"/SDL2_linux
-        make install DESTDIR="$BUILDDIR"/SDL2_linux || die
+        make install # DESTDIR="$BUILDDIR"/SDL2_linux || die
         export CFLAGS=""
         export LDFLAGS=""
 }
