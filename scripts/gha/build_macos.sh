@@ -43,7 +43,7 @@ rm -rf build # clean-up build directory
 # build_dedicated_tarball
 # mv $DSTARGZ artifacts/
         
-build_sdl2
+# build_sdl2
 build_engine full # don't rebuild some common parts twice
 # build_appimage
 # mv $APPIMAGE artifacts/
