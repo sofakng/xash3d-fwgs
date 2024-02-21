@@ -23,8 +23,8 @@ build_sdl2()
                 --with-x # \
                 # --prefix / || die # get rid of /usr/local stuff
         make -j2 || die
-        mkdir -p "$BUILDDIR"/SDL2_linux
-        make install # DESTDIR="$BUILDDIR"/SDL2_linux || die
+        mkdir -p "$BUILDDIR"/SDL2_macos
+        make install DESTDIR="$BUILDDIR"/SDL2_macos || die
         export CFLAGS=""
         export LDFLAGS=""
 }
@@ -33,7 +33,7 @@ build_engine()
 {
         # Build engine
         cd "$BUILDDIR" || die
-	/usr/bin/python3 ./waf configure -T release --skip-sdl2-sanity-check
+	/usr/bin/python3 ./waf configure --sdl2=SDL2_macos -T release --skip-sdl2-sanity-check || die_configure
         /usr/bin/python3 ./waf build || die
 }
 
