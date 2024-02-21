@@ -6,21 +6,21 @@ build_sdl2()
 {
         cd "$BUILDDIR"/SDL2_src || die
         ./configure \
-                --disable-rpath
-                --enable-pulseaudio
-                --enable-pulseaudio-shared
-                --enable-video-dummy
-                --enable-video-opengl
-                --enable-video-opengles
-                --enable-video-x11
-                --enable-video-x11-scrnsaver
-                --enable-video-x11-xcursor
-                --enable-video-x11-xinerama
-                --enable-video-x11-xinput
-                --enable-video-x11-xrandr
-                --enable-video-x11-xshape
-                --enable-x11-shared
-                --with-x
+                --disable-rpath \
+                --enable-pulseaudio \
+                --enable-pulseaudio-shared \
+                --enable-video-dummy \
+                --enable-video-opengl \
+                --enable-video-opengles \
+                --enable-video-x11 \
+                --enable-video-x11-scrnsaver \
+                --enable-video-x11-xcursor \
+                --enable-video-x11-xinerama \
+                --enable-video-x11-xinput \
+                --enable-video-x11-xrandr \
+                --enable-video-x11-xshape \
+                --enable-x11-shared \
+                --with-x \
                 --prefix / || die # get rid of /usr/local stuff
         make -j2 || die
         mkdir -p "$BUILDDIR"/SDL2_linux
