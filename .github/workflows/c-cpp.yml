@@ -13,7 +13,7 @@ jobs:
       SDL_VERSION: 2.28.5
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout
       with:
         submodules: recursive
     - name: Setup SDL2 frameworks
@@ -28,7 +28,7 @@ jobs:
     - name: install
       run: python3 ./waf install --destdir=artifacts
     - name: Upload engine (artifacts)
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact
       with:
         name: artifact
         path: artifacts/*
