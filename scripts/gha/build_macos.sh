@@ -33,7 +33,7 @@ build_engine()
 {
         # Build engine
         cd "$BUILDDIR" || die
-	/usr/bin/python3 ./waf configure -T release
+	/usr/bin/python3 ./waf configure -T release --skip-sdl2-sanity-check
 }
 
 mkdir -p artifacts/
@@ -43,7 +43,7 @@ rm -rf build # clean-up build directory
 # build_dedicated_tarball
 # mv $DSTARGZ artifacts/
         
-# build_sdl2
+build_sdl2
 build_engine full # don't rebuild some common parts twice
 # build_appimage
 # mv $APPIMAGE artifacts/
