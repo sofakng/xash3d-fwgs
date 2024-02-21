@@ -24,7 +24,7 @@ jobs:
    # - name: Build engine
    #   run: bash scripts/gha/build_macos.sh
     - name: configure
-      run: python3 ./waf configure --sdl2=${{ env.HOME }}/Library/Frameworks/SDL2.framework -T release
+      run: python3 ./waf configure --sdl2=${{ github.workspace }}/../../Library/Frameworks/SDL2.framework -T release
       # run: python3 ./waf configure --sdl2=./SDL2_macos/SDL2.framework -T release
 #    - name: make
 #      run: make
