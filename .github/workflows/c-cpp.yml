@@ -20,9 +20,10 @@ jobs:
       uses: BrettDong/setup-sdl2-frameworks@main
       with:
         sdl2: ${{ env.SDL_VERSION }}
-        dest: ${{ github.workspace }}/SDL2_macos
+        # dest: ${{ github.workspace }}/SDL2_macos
     - name: configure
-      run: python3 ./waf configure --sdl2=./SDL2_macos/SDL2.framework -T release
+      run: python3 ./waf configure --sdl2=/Users/runner/work/xash3d-fwgs/xash3d-fwgs/SDL2_macos/SDL2.framework -T release
+      # run: python3 ./waf configure --sdl2=./SDL2_macos/SDL2.framework -T release
 #    - name: make
 #      run: make
 #    - name: make check
