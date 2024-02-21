@@ -18,10 +18,10 @@ jobs:
         submodules: recursive
     #- name: Install dependencies
     #  run: bash scripts/gha/deps_macos.sh
-    - name: Setup SDL2 frameworks
-      uses: BrettDong/setup-sdl2-frameworks@main
-      with:
-        sdl2: latest
+    #- name: Setup SDL2 frameworks
+    #  uses: BrettDong/setup-sdl2-frameworks@main
+    #  with:
+    #    sdl2: latest
     - name: Build engine
       run: bash scripts/gha/build_macos.sh
 #    - name: configure
