@@ -36,7 +36,7 @@ build_engine()
 {
         # Build engine
         cd "$BUILDDIR" || die
-	/usr/bin/python3 ./waf configure --sdl2=SDL2_macos -T release --skip-sdl2-sanity-check || die_configure
+	/usr/bin/python3 ./waf configure # --sdl2=SDL2_macos -T release --skip-sdl2-sanity-check || die_configure
         /usr/bin/python3 ./waf build || die
 }
 
@@ -47,7 +47,7 @@ rm -rf build # clean-up build directory
 # build_dedicated_tarball
 # mv $DSTARGZ artifacts/
         
-build_sdl2
+# build_sdl2
 build_engine full # don't rebuild some common parts twice
 # build_appimage
 # mv $APPIMAGE artifacts/
