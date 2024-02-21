@@ -36,7 +36,7 @@ build_engine()
 {
         # Build engine
         cd "$BUILDDIR" || die
-	/usr/bin/python3 ./waf configure # --sdl2=SDL2_macos -T release --skip-sdl2-sanity-check || die_configure
+	/usr/bin/python3 ./waf configure --sdl2=/Users/runner/Library/Frameworks/SDL2.framework -T release # --skip-sdl2-sanity-check || die_configure
         /usr/bin/python3 ./waf build || die
 }
 
