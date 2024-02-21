@@ -20,10 +20,11 @@ jobs:
       uses: BrettDong/setup-sdl2-frameworks@main
       with:
         sdl2: ${{ env.SDL_VERSION }}
+        dest: "$GITHUB_WORKSPACE/SDL2_macos"
     # - name: Build engine
     #  run: bash scripts/gha/build_macos.sh
-    - name: configure
-      run: python3 ./waf configure
+#    - name: configure
+#      run: python3 ./waf configure
 #    - name: make
 #      run: make
 #    - name: make check
