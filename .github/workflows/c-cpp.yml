@@ -22,7 +22,7 @@ jobs:
         sdl2: ${{ env.SDL_VERSION }}
         dest: ${{ github.workspace }}/SDL2_macos
     - name: configure
-      run: python3 ./waf configure -T release
+      run: python3 ./waf configure --sdl2=./SDL2_macos/SDL2.framework -T release
 #    - name: make
 #      run: make
 #    - name: make check
