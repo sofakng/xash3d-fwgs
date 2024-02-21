@@ -25,3 +25,10 @@ jobs:
       run: python3 ./waf configure --sdl2=${{ github.workspace }}/../../../Library/Frameworks/SDL2.framework -T release
     - name: build
       run: python3 ./waf build
+    - name: install
+      run: python3 ./waf install --destdir=artifacts
+    - name: Upload engine (artifacts)
+      uses: actions/upload-artifact@v3
+      with:
+        name: artifact
+        path: artifacts/*
