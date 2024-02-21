@@ -5,4 +5,4 @@
 # APP=xash3d-fwgs
 
 cd "$BUILDDIR" || die
-./waf configure -T release
+/usr/bin/python3 ./waf configure -T release
