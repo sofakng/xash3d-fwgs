@@ -27,7 +27,7 @@ build_sdl2()
         mkdir -p "$BUILDDIR"/SDL2_macos
         make install DESTDIR="$BUILDDIR"/SDL2_macos || die
 	ls -aFl "$BUILDDIR"/SDL2_macos
-        export CFLAGS=""
+        export CFLAGS="-I$BUILDDIR/SDL2_macos/include"
         export LDFLAGS=""
 }
 
