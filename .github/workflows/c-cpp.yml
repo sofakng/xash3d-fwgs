@@ -12,18 +12,21 @@ jobs:
     env:
       SDL_VERSION: 2.28.5
     steps:
-    #- name: Checkout
-    #  uses: actions/checkout@v3
-    #  with:
-    #    submodules: recursive
-    - name: |
+    - name: Checkout
+      # uses: actions/checkout@v3
+      run: |
           echo ${{ github.workspace }}
           echo $GITHUB_WORKSPACE
-    - name: Setup SDL2 frameworks
-      uses: BrettDong/setup-sdl2-frameworks@main
-      with:
-        sdl2: ${{ env.SDL_VERSION }}
-        dest: ${{ github_workspace }}/SDL2_macos"
+    #  with:
+    #    submodules: recursive
+    #- name: |
+    #      echo ${{ github.workspace }}
+    #      echo $GITHUB_WORKSPACE
+    #- name: Setup SDL2 frameworks
+    #  uses: BrettDong/setup-sdl2-frameworks@main
+    #  with:
+    #    sdl2: ${{ env.SDL_VERSION }}
+    #    dest: ${{ github_workspace }}/SDL2_macos"
     # - name: Build engine
     #  run: bash scripts/gha/build_macos.sh
 #    - name: configure
