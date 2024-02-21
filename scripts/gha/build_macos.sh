@@ -23,8 +23,10 @@ build_sdl2()
                 --with-x # \
                 # --prefix / || die # get rid of /usr/local stuff
         make -j2 || die
+	echo "JJK: BUILDDIR: $BUILDDIR\r\n"
         mkdir -p "$BUILDDIR"/SDL2_macos
         make install DESTDIR="$BUILDDIR"/SDL2_macos || die
+	ls -aFl "$BUILDDIR"/SDL2_macos
         export CFLAGS=""
         export LDFLAGS=""
 }
