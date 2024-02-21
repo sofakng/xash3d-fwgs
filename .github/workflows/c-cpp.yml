@@ -21,15 +21,7 @@ jobs:
       with:
         sdl2: ${{ env.SDL_VERSION }}
         # dest: ${{ github.workspace }}/SDL2_macos
-   # - name: Build engine
-   #   run: bash scripts/gha/build_macos.sh
     - name: configure
       run: python3 ./waf configure --sdl2=${{ github.workspace }}/../../../Library/Frameworks/SDL2.framework -T release
-      # run: python3 ./waf configure --sdl2=./SDL2_macos/SDL2.framework -T release
-    - name: make
+    - name: build
       run: python3 ./waf build
-#    - name: make check
-#      run: make check
-#    - name: make distcheck
-#      run: make distcheck
-      
