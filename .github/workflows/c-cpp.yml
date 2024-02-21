@@ -9,6 +9,8 @@ on:
 jobs:
   build:
     runs-on: macos-14
+    env:
+      SDL_VERSION: 2.28.5
     steps:
     - name: Checkout
       uses: actions/checkout@v3
